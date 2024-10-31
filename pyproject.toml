@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "milestone-project-4"
+version = "0.1.0"
+description = ""
+authors = ["apop01100 <mthoriqafifr01@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.0.3"
+python-dotenv = "^1.0.1"
+flask-migrate = "^4.0.7"
+flasgger = "^0.9.7.1"
+flask-jwt-extended = "^4.6.0"
+pydantic = {extras = ["email"], version = "^2.9.2"}
+sqlalchemy = "^2.0.36"
+mysql-connector-python = "^9.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
