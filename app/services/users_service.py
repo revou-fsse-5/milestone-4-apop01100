@@ -92,3 +92,35 @@ class UsersService:
             except Exception as e:
                 session.rollback()
                 return jsonify(Messages.error(e)), 400
+            
+    @staticmethod
+    def show_all_users():
+        with Session() as session:
+            try:
+                users: User = session.query(User).all()
+                
+                list_users = [user.to_dict() for user in users]
+                
+                return jsonify({
+                    "message": Messages.SUCCESS_SHOW_ALL_USER,
+                    "users": list_users
+                })
+            except Exception as e:
+                session.rollback()
+                return jsonify(Messages.error(e))
+            
+    @staticmethod
+    def show_all_admin():
+        with Session() as session:
+            try:
+                admins: User = session.query(User).filter_by(role = "admin").all()
+                
+                list_admins = [admin.to_dict() for admin in admins]
+                
+                return jsonify({
+                    "message": Messages.SUCCESS_SHOW_ALL_ADMIN,
+                    "administrators": list_admins 
+                })
+            except Exception as e:
+                session.rollback()
+                return jsonify(Messages.error(e))

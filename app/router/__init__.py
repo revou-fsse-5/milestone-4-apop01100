@@ -5,10 +5,13 @@ from app.controllers.transactions_controllers import TransactionControllers
 from app.controllers.seeds_controllers import seeds_controller
 
 users = Blueprint("users", __name__)
-users.add_url_rule("/register/<string:role>", view_func=UsersController.create_user, methods=["POST"])
+users.add_url_rule("/register/user", view_func=UsersController.create_user, methods=["POST"])
+users.add_url_rule("/register/admin", view_func=UsersController.create_admin, methods=["POST"])
 users.add_url_rule("/login", view_func=UsersController.login_user, methods=["POST"])
 users.add_url_rule("/me", view_func=UsersController.user_profile, methods=["GET"])
 users.add_url_rule("/me", view_func=UsersController.user_update, methods=["PUT"])
+users.add_url_rule("/role/user", view_func=UsersController.show_all_users, methods=["GET"])
+users.add_url_rule("/role/admin", view_func=UsersController.show_all_admin, methods=["GET"])
 
 accounts = Blueprint("accounts", __name__)
 accounts.add_url_rule("/", view_func=AccountsControllers.create_account, methods=["POST"])

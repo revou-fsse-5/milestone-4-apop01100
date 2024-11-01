@@ -86,7 +86,8 @@ class TransactionsService:
                                                                 user_id=payload["user_id"], 
                                                                 account_number=data["from_account_number"]).first()
                 # get id to_number_account                                                      
-                to_account = session.query(Account).filter_by(account_number=data["to_account_number"]).first()
+                to_account = session.query(Account).filter_by(account_type="transactional",
+                                                              account_number=data["to_account_number"]).first()
                 
                 if from_account is None:
                     return jsonify({
@@ -207,14 +208,4 @@ class TransactionsService:
                 }), 200
             except Exception as e:
                 session.rollback()
-                return jsonify(Messages.error(e))
-            
-                
-                
-                
-                
-            
-            
-            
-            
-            
+                return jsonify(Messages.error(e))         

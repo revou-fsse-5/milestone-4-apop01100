@@ -14,6 +14,8 @@ class Messages:
     SUCCESS_SHOW_TRANSACTION = "success show transaction"
     ACCOUNT_NOT_EXIST = "account not exist"
     CANNOT_TRANSFER_SAME_ID = "cannot transfer for the sama number"
+    SUCCESS_SHOW_ALL_USER = "success show all users"
+    SUCCESS_SHOW_ALL_ADMIN = "success show all admin"
     INSUFFICIENT_BALANCE = "account insufficient balance"
     TRANSACTION_NOT_FOUND = "transaction not found"
     TRANSACTION_SUCCESS = "transaction success"

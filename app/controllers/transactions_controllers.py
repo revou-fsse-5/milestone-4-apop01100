@@ -7,14 +7,14 @@ from app.constant.messages import Messages
 
 class TransactionControllers:
     @staticmethod
-    @role_required("user", "admin")
+    @role_required("user", "admin", "super_admin")
     def show_all_transaction(payload):
         response = TransactionsService.show_transactions(payload)
         
         return response
     
     @staticmethod
-    @role_required("user", "admin")
+    @role_required("user", "admin", "super_admin")
     def transaction_detail(payload, id):
         response = TransactionsService.transaction_detail(payload, id)
         

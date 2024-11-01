@@ -19,5 +19,11 @@ users_data = [
         "email": "admin1@example.com",
         "role": "ADMIN", # assuming RoleUserEnum.ADMIN
         "password_hash": "hashed_password3"
+    },
+    {
+      "username": "super_admin",
+      "email": "superadmin@example.com",
+      "role": "SUPER_ADMIN", # assuming RoleUserEnum.SUPER_ADMIN
+      "password_hash": "hashed_password4"  
     }
 ]
